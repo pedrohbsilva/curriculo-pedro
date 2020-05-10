@@ -1,17 +1,4 @@
-.timeline1 {
-  border-right: 4px solid #004ffc;
-  border-bottom-right-radius: 4px;
-  border-top-right-radius: 4px;    
-  background: fade(white, 3%);
-  color: fade(white, 80%);
-  font-family: 'Chivo', sans-serif;  
-  position: relative;
-  line-height: 1.4em;
-  font-size: 1.03em;   
-  list-style: none;
-  font-weight: 100;  
-  padding-right: 30%;
-}html {
+html {
   font-size: 62.5%;
 }
 html, body {
@@ -26,7 +13,6 @@ body {
   font-size: 1.6rem;
   margin:0;
 }
-
 h1, h3 {
   color: #13293D;
 }
@@ -37,7 +23,18 @@ a {
 a:hover {
   color: #13293D;
 }
-
+.containerText {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 70%;
+  position: relative;
+  line-height: 1.4em;
+  font-size: 1.03em;   
+  list-style: none;
+  font-weight: 100;  
+  padding-right: 10%;
+}
 .sidenav {
   height: 100%;
   width: 18%;
@@ -64,91 +61,21 @@ a:hover {
   background-color: #247BA0;
   color: #E8F1F2;
 }
+
+@media screen and (max-width: 700px) {
+  .sidenav {
+    visibility: hidden;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .sidenav a {
+    visibility: hidden;
+  }
+}
+
 .main {
-  margin-left: 18%; /* Same as the width of the sidenav */
+  margin-left: 18%;
   margin-right: 5%;
   padding: 0px 10px;
 }
-* {
-  box-sizing: border-box;
-}
-
-/* The actual timeline (the vertical ruler) */
-.timeline {
-  position: relative;
-}
-
-/* The actual timeline (the vertical ruler) */
-.timeline::after {
-  content: '';
-  position: absolute;
-  width: 6px;
-  background-color: white;
-  top: 0;
-  bottom: 0;
-  right: -3px;
-}
-
-/* Container around content */
-.container {
-  padding: 10px 40px;
-  position: relative;
-  background-color: inherit;
-  width: 100%;
-  padding-right: 70px;
-  line-height: 1.4em;
-  font-size: 1.03em;   
-  list-style: none;
-  font-weight: 100;  
-  padding-right: 20%;
-}
-
-.containerText {
-  padding: 10px 40px;
-  position: relative;
-  background-color: inherit;
-  width: 100%;
-  position: relative;
-  line-height: 1.4em;
-  font-size: 1.03em;   
-  list-style: none;
-  font-weight: 100;  
-  padding-right: 10%;
-}
-  /* Make sure all circles are at the same spot */
-  .right::after {
-  right: 15px;
-  }
-  .right::before {
-    content: "";
-    height: 0;
-    position: absolute;
-    top: 22px;
-    width: 10%;
-    height: 10%;
-    z-index: 1;
-    right: 30px;
-    border-radius: 50%;
-    background-color: white;
-    border: medium solid white;
-    border-color: transparent white transparent transparent;
-  }
-  
-/* The circles on the timeline */
-.container::after {
-  content: '';
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  right: -17px;
-  background-color: rgb(74, 14, 240);
-  border: 4px solid rgb(165, 181, 197);
-  top: 15px;
-  border-radius: 50%;
-  z-index: 1;
-}
-
-/* Place the container to the right */
-
-/* The actual content */
-
