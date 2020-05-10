@@ -1,0 +1,137 @@
+html {
+  font-size: 62.5%;
+}
+html, body {
+   height: 100vh;
+   font-family: sans-serif;
+   text-rendering: optimizeLegibility;
+   -webkit-font-smoothing: antialiased; 
+   background-color: #006494;
+   color: #E8F1F2;
+}
+body {
+  font-size: 1.6rem;
+  margin:0;
+}
+
+h1, h3 {
+  color: #13293D;
+}
+a {
+  text-decoration:none;
+  color: #E8F1F2;
+}
+a:hover {
+  color: #13293D;
+}
+.containerText {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 90%;
+  position: relative;
+  line-height: 1.4em;
+  font-size: 1.03em;   
+  list-style: none;
+  font-weight: 100;  
+  padding-right: 10%;
+}
+.sidenav {
+  height: 100%;
+  width: 18%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #13293D ;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  text-align: center;
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  color: #818181;
+  display: block;
+  margin-top: 5px;
+}
+
+.sidenav a:hover {
+  background-color: #247BA0;
+  color: #E8F1F2;
+}
+.main {
+  margin-left: 18%; /* Same as the width of the sidenav */
+  margin-right: 5%;
+  padding: 0px 10px;
+}
+.timeline {
+  position: absolute;
+  margin: 0 auto;
+  width: 90%;  
+}
+
+.timeline ul li {
+  margin-bottom: 50px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.point {
+  min-width: 20px;
+  height: 20px;
+  background-color: #be9fe1;
+  border-radius: 100%;
+  z-index: 1;
+  border: 3px #333333 solid;
+  position: relative;
+  left: 1px;
+}
+
+.timeline ul li .content {
+  width: 110%;
+  padding: 0 20px;
+}
+
+
+.timeline ul li .date {
+  width: 50%;
+  padding: 0 20px;
+  font-weight: normal;
+}
+
+.timeline ul li .date h4 {
+  background-color: #E8F1F2;
+  color: #006494;
+  width: 100px;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 3px;
+  left: 65%;
+  background-color: #333333;
+}
+
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 100%;
+  padding-right: 70px;
+  line-height: 1.4em;
+  font-size: 1.03em;   
+  list-style: none;
+  font-weight: 100;  
+  padding-right: 20%;
+}
