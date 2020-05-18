@@ -1,81 +1,70 @@
-.timeline1 {
-  border-right: 4px solid #004ffc;
-  border-bottom-right-radius: 4px;
-  border-top-right-radius: 4px;    
-  background: fade(white, 3%);
-  color: fade(white, 80%);
-  font-family: 'Chivo', sans-serif;  
-  position: relative;
-  line-height: 1.4em;
-  font-size: 1.03em;   
-  list-style: none;
-  font-weight: 100;  
-  padding-right: 30%;
-}html {
-  font-size: 62.5%;
-}
-html, body {
-   height: 100vh;
-   font-family: sans-serif;
-   text-rendering: optimizeLegibility;
-   -webkit-font-smoothing: antialiased; 
-   background-color: #006494;
-   color: #E8F1F2;
+/* html, body {
+  height: 100vh;
+  font-family: sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased; 
+  background-color: #f0f0f0;
+  color: #E8F1F2;
 }
 body {
-  font-size: 1.6rem;
-  margin:0;
+ font-size: 1.6em;
+ margin:0;
 }
 
-h1, h3 {
-  color: #13293D;
-}
-a {
-  text-decoration:none;
-  color: #E8F1F2;
-}
-a:hover {
-  color: #13293D;
-}
-
-.sidenav {
-  height: 100%;
-  width: 18%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #13293D ;
-  overflow-x: hidden;
-  padding-top: 20px;
-}
-
-.sidenav a {
-  text-align: center;
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  color: #818181;
-  display: block;
-  margin-top: 5px;
-}
-
-.sidenav a:hover {
-  background-color: #247BA0;
-  color: #E8F1F2;
-}
-.main {
-  margin-left: 18%; /* Same as the width of the sidenav */
-  margin-right: 5%;
-  padding: 0px 10px;
-}
-* {
+ */
+ * {
   box-sizing: border-box;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased; 
+  height: 100vh;
+  background-color: #c9ced8;
+  font-family: Helvetica, sans-serif;
+  margin: 0;
+}
+.topnav {
+  justify-content: center;
+  flex-direction: row;
+  display: grid;
+  overflow: hidden;
+  background-color: #666666;
+  height: 30%;
+  margin-bottom: 5%;
+  color: #f0f0f0;
+}
+.text{
+  text-align: center;
+  margin-top: 4px;
+}
+.card {
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  height: 50%;
+  display: flex;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  width: 80%;
+  margin-top: -3%;
+  margin-bottom: 2%;
+  background-color: #f0f0f0;
+
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container2 {
+  padding: 2px 16px;
+
 }
 
 /* The actual timeline (the vertical ruler) */
 .timeline {
   position: relative;
+  margin: 0 auto;
 }
 
 /* The actual timeline (the vertical ruler) */
@@ -83,10 +72,11 @@ a:hover {
   content: '';
   position: absolute;
   width: 6px;
-  background-color: white;
-  top: 0;
+  background-color: silver;
+  top: 20px;
   bottom: 0;
-  right: -3px;
+  left: 50%;
+  margin-left: -3px;
 }
 
 /* Container around content */
@@ -94,46 +84,9 @@ a:hover {
   padding: 10px 40px;
   position: relative;
   background-color: inherit;
-  width: 100%;
-  padding-right: 70px;
-  line-height: 1.4em;
-  font-size: 1.03em;   
-  list-style: none;
-  font-weight: 100;  
-  padding-right: 20%;
+  width: 50%;
 }
 
-.containerText {
-  padding: 10px 40px;
-  position: relative;
-  background-color: inherit;
-  width: 100%;
-  position: relative;
-  line-height: 1.4em;
-  font-size: 1.03em;   
-  list-style: none;
-  font-weight: 100;  
-  padding-right: 10%;
-}
-  /* Make sure all circles are at the same spot */
-  .right::after {
-  right: 15px;
-  }
-  .right::before {
-    content: "";
-    height: 0;
-    position: absolute;
-    top: 22px;
-    width: 10%;
-    height: 10%;
-    z-index: 1;
-    right: 30px;
-    border-radius: 50%;
-    background-color: white;
-    border: medium solid white;
-    border-color: transparent white transparent transparent;
-  }
-  
 /* The circles on the timeline */
 .container::after {
   content: '';
@@ -141,14 +94,295 @@ a:hover {
   width: 25px;
   height: 25px;
   right: -17px;
-  background-color: rgb(74, 14, 240);
-  border: 4px solid rgb(165, 181, 197);
+  background-color: rgb(11, 238, 227);
+  border: 4px solid transparent;
   top: 15px;
   border-radius: 50%;
   z-index: 1;
 }
 
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
 /* Place the container to the right */
+.right {
+  left: 50%;
+}
 
-/* The actual content */
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid #666666;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent #666666;
+}
 
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid #666666;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent #666666 transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+.image {
+  margin-top: 6%; 
+  margin-bottom: -6%;
+}
+.content {
+  padding: 2px 30px;
+  background-color: #666666;
+  position: relative;
+  margin-bottom: 0;
+  text-align: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  color: #f0f0f0;
+  text-align: left;
+}
+
+.content1 {
+  padding: 30px 30px;
+  background-color: #f0f0f0;
+  margin-top: 0;
+  text-align: center;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  text-align: left;
+}
+.cardMy {
+  align-items: center;
+  justify-content: space-between;
+  height: 80%;
+  display: flex;
+  margin: 2%;
+}
+.card-item {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  background-color: #666666;
+  color: #f0f0f0;
+  width: 33%;
+  height: 100%;
+  justify-content: space-between;
+  text-align: center;
+}
+.card-item:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.iconFormat {
+  float:right; 
+  font-size: 50px;
+  margin-top: 3%;
+}
+
+.progressBar {
+  margin: 0%;
+  margin-top: 5%;
+  margin-left: 10%;
+  margin-right: 9%;
+  margin-bottom: 7%; 
+  background-color: silver; 
+  border-bottom-left-radius: 10px; 
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px; 
+  border-top-right-radius: 10px;
+}
+.colorBar {
+  width: 0;
+  border-bottom-left-radius: 10px; 
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px; 
+  border-top-right-radius: 10px; 
+  height:15px; 
+  background-color: aqua;
+}
+/* The actual timeline (the vertical ruler) */
+.timelineEdu {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 70%;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timelineEdu::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background-color: silver;
+  top: 11%;
+  bottom: 0;
+  left: 45px;  
+}
+
+/* Container around content */
+.containerEdu {
+  padding: 3px;
+  position: relative;
+  background-color: inherit;
+  width: 100%;
+  padding-left: 70px;
+  padding-right: 25px; 
+  margin-bottom: -5%;
+}
+
+/* The circles on the timeline */
+.containerEdu::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  right: -17px;
+  background-color: aqua;
+  top: 19px;
+  border-radius: 50%;
+  z-index: 1;
+  margin-top: 3%;
+}
+.containerEdu::before {
+  left: 15px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+  }
+
+.leftEdu::after {
+  left: 41px;
+  }
+.contentEdu{
+  text-align: left;
+  }
+  .space-down {
+    margin-bottom: 30%;
+  }
+  .skills {
+    text-align: left; 
+    margin-top: -4%; 
+    margin-bottom: -4%; 
+    margin-left: 10%;
+  }
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+
+  .cardMy {
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    margin: auto; 
+    
+  }
+  .card-item {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 96%;
+    height: 60%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
+  }
+
+  /* Place the timelime to the left */
+  .timeline::after {
+  left: 31px;
+  }
+  
+  /* Full-width containers */
+  .container {
+  width: 100%;
+  padding-left: 70px;
+  padding-right: 25px;
+  }
+  
+  /* Make sure that all arrows are pointing leftwards */
+  .container::before {
+  left: 60px;
+  border: medium solid #666666;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent #666666 transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+  left: 15px;
+  }
+  
+  /* Make all right containers behave like the left ones */
+  .right {
+  left: 0%;
+  }
+  .timelineEdu::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: silver;
+    top: 13%;
+    bottom: 0;
+    left: 44px;  
+  }
+  .space-down {
+    margin-bottom: 30%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .cardMy {
+    display: inline;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2%; 
+    
+  }
+  .card-item {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 96%;
+    height: 90%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    
+  }
+  .progressBar {
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 9%;
+    margin-bottom: 7%; 
+    background-color: silver; 
+    border-bottom-left-radius: 10px; 
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px; 
+    border-top-right-radius: 10px;
+  }
+  .space-down {
+    margin-bottom: 0;
+    padding-bottom: 120px;
+  }
+}
+@media screen and (max-width: 1120px) {
+  .image {
+    display: none;
+  }
+  
+}
